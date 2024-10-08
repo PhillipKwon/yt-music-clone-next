@@ -11,7 +11,6 @@ import PlaylistNav from "@/components/elements/PlaylistNav";
 
 const Navigator = ({}) => {
   const pathname = usePathname();
-  console.log(pathname);
 
   const routes = useMemo(() => {
     return [
@@ -25,13 +24,13 @@ const Navigator = ({}) => {
         icon: <FiCompass size={24} />,
         label: "둘러보기",
         isActive: pathname === "/explore",
-        href: "/",
+        href: "/explore",
       },
       {
         icon: <FiMusic size={24} />,
         label: "보관함",
         isActive: pathname === "/library",
-        href: "/",
+        href: "/library",
       },
     ];
   }, [pathname]);
