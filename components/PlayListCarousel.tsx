@@ -47,17 +47,16 @@ const PlayListCarousel: React.FC<PlayListCarouselProps> = ({
         <CarouselContent>
           {playlistArray.map((playlist, index) => {
             return (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem
+                key={index}
+                className="md:basis-1/2 lg:basis-1/3 xl:basis-1/5"
+              >
                 <PlayListCard playlist={playlist} />
               </CarouselItem>
             );
           })}
         </CarouselContent>
       </Carousel>
-      {/* PlaylistCarousel
-      {thumbNail}
-      {title} - {subTitle}
-      {JSON.stringify(playlistArray)} */}
     </div>
   );
 };
