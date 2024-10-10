@@ -98,7 +98,7 @@ const Header = ({ children }) => {
           </div>
         </PagePadding>
       </section>
-      <section className="absolute">{children}</section>
+      <section className="absolute w-full">{children}</section>
     </header>
   );
 };
