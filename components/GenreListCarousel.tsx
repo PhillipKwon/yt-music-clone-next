@@ -16,7 +16,7 @@ interface GenreListCarouselProps {
   genreList: string[];
 }
 
-const GenreColumn = ({ genreList = [] }: { genreList: string[][] }) => {
+const GenreColumn = ({ genreList = [] }: { genreList: string[] }) => {
   return (
     <div className="flex flex-col gap-4">
       {genreList.map((genre, idx) => {
