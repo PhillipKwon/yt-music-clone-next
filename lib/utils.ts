@@ -1,4 +1,3 @@
-import { TopSong } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -17,14 +16,14 @@ export function getRandomInt(min: number, max: number) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export function getRandomElementFromArray(arr: any[]) {
+export function getRandomElementFromArray<T>(arr: T[]) {
   const len = arr?.length;
 
   return arr[getRandomInt(0, len - 1)];
 }
 
-export function chunkArray(arr: any[], chunkSize: number) {
-  const resultArray = [];
+export function chunkArray<T>(arr: T[], chunkSize: number) {
+  const resultArray: unknown[][] = [];
   for (let i = 0; i < arr.length; i += chunkSize) {
     const chunk = arr.slice(i, i + chunkSize);
     resultArray.push(chunk);
