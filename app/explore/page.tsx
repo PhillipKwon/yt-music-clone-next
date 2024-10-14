@@ -18,7 +18,7 @@ const page = async () => {
 
   return (
     <PagePadding>
-      <div className="mt-4"></div>
+      <div className="mt-9"></div>
       <Category />
       <div className="mt-20"></div>
       {/** Carousel */}
