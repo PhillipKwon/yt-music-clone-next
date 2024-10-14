@@ -20,7 +20,7 @@ const GenreColumn = ({ genreList = [] }: { genreList: string[][] }) => {
   return (
     <div className="flex flex-col gap-4">
       {genreList.map((genre, idx) => {
-        return <GenreCard key={idx} genreList={genre} />;
+        return <GenreCard key={idx} genre={genre} />;
       })}
     </div>
   );
