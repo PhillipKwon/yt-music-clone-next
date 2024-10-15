@@ -12,16 +12,26 @@ import {
   FiThumbsUp,
 } from "react-icons/fi";
 import IconButton from "./elements/IconButton";
+import usePlayerState from "@/hooks/usePlayerState";
 
 interface SongCardProps {
   song: TopSong;
 }
 const SongCard: React.FC<SongCardProps> = ({ song }) => {
+  const { addSongList } = usePlayerState();
+
+  const onClickPlay = () => {
+    addSongList([song]);
+  };
+
   return (
     <article className="flex flex-row gap-4 h-[49px] w-full relative group items-center">
       <div className="w-[48px] h-[48px] relative">
         <Image src={song.imageSrc} alt="img" fill className="object-cover" />
-        <section className="hidden group-hover:flex absolute top-0 w-[48px] h-[48px] items-center justify-center bg-[rgba(0,0,0,0.7)] cursor-pointer">
+        <section
+          className="hidden group-hover:flex absolute top-0 w-[48px] h-[48px] items-center justify-center bg-[rgba(0,0,0,0.7)] cursor-pointer"
+          onClick={onClickPlay}
+        >
           <FiPlay size={20} />
         </section>
       </div>

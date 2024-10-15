@@ -22,8 +22,6 @@ const page = async (props: PlayListPageProps) => {
 
   const imgSrc = getRandomElementFromArray(playlist.songList)?.imageSrc;
 
-  console.log(imgSrc);
-
   return (
     <PagePadding>
       <HeaderBgChanger imageSrc={imgSrc} />

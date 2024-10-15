@@ -8,11 +8,19 @@ import { getRandomElementFromArray } from "@/lib/utils";
 import WhiteButton from "./elements/WhiteButton";
 import DarkButton from "./elements/DarkButton";
 import { Label } from "@radix-ui/react-dropdown-menu";
+import usePlayerState from "@/hooks/usePlayerState";
 
 const PlayListHead = ({ playlist = {} } = {}) => {
   const { playlistName, owner, songList = [] } = playlist;
 
   const randomSong = getRandomElementFromArray(songList);
+
+  const { addSongList } = usePlayerState();
+
+  const onClickPlay = () => {
+    addSongList(songList);
+  };
+
   return (
     <section>
       <div className="flex flex-row gap-[50px]">
@@ -27,6 +35,7 @@ const PlayListHead = ({ playlist = {} } = {}) => {
           </div>
           <ul className="hidden lg:flex flex-row gap-4 mt-4">
             <WhiteButton
+              onClick={onClickPlay}
               className={"w-[85px] text-[14px]"}
               icon={<FiPlay />}
               label={"재생"}
@@ -42,6 +51,7 @@ const PlayListHead = ({ playlist = {} } = {}) => {
       </div>
       <ul className="flex flex-row gap-4 mt-4 lg:hidden">
         <WhiteButton
+          onClick={onClickPlay}
           className={"w-[85px] text-[14px]"}
           icon={<FiPlay />}
           label={"재생"}
